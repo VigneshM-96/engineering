@@ -1,0 +1,33 @@
+DAY 1 - 03/10/2026
+FOCUS: AI ENGINEERING
+
+LEARNING TASKS
+[ ] Python functions - parameters, arguments, return
+[ ] Python OOP - classes, objects, __init__, self
+[ ] NumPy - arrays, shape, indexing, slicing
+[ ] NumPy - arithmetic, aggregation, axis
+[ ] Pandas - Series vs DataFrame
+[ ] Pandas - read CSV, filtering, sorting
+
+PROJECT 1 - STUDENT DATA ANALYZER
+[ ] Load student data with Pandas
+[ ] Clean and filter the data
+[ ] Calculate average, highest and lowest marks
+[ ] Generate a simple summary
+
+PROJECT 2 - NUMPY STATISTICS TOOL
+[ ] Accept numerical data
+[ ] Calculate mean, median, minimum, maximum and standard deviation
+[ ] Display the results clearly
+
+DAY 1 COMPLETION
+[ ] Complete 6 learning tasks
+[ ] Complete Project 1
+[ ] Complete Project 2
+
+NEXT ROTATION
+Day 2 - Flutter
+Day 3 - DSA
+Day 4 - Web App
+Day 5 - Quantum Computing
+Day 6 - AI Engineering
