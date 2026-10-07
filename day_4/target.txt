@@ -1,0 +1,36 @@
+DAY 4 - 06/10/2026
+FOCUS: WEB APP
+
+LEARNING TASKS
+[ ] HTML semantic structure
+[ ] CSS Flexbox fundamentals
+[ ] CSS Grid fundamentals
+[ ] JavaScript DOM manipulation
+[ ] JavaScript events and event listeners
+[ ] Form handling and basic validation
+
+PROJECT 1 - RESPONSIVE PROFILE WEBSITE
+[ ] Create a semantic HTML structure
+[ ] Build header, navigation, main content and footer
+[ ] Create a responsive profile section
+[ ] Use Flexbox and Grid for layout
+[ ] Add mobile-friendly styling
+
+PROJECT 2 - INTERACTIVE CONTACT FORM
+[ ] Create name, email and message fields
+[ ] Handle form submission with JavaScript
+[ ] Validate required fields
+[ ] Display validation messages
+[ ] Show a successful submission message
+
+DAY 4 COMPLETION
+[ ] Complete 6 learning tasks
+[ ] Complete Project 1
+[ ] Complete Project 2
+
+NEXT ROTATION
+Day 5 - Quantum Computing
+Day 6 - AI Engineering
+Day 7 - Flutter
+Day 8 - DSA
+Day 9 - Web App
