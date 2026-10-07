@@ -1,0 +1,8 @@
+quantum measurement :
+
+the quantum measurement is forces the spinning qubit to stop and pick the side.
+
+resource :
+
+1) google
+2) quantum atlas - https://quantumatlas.umd.edu/entry/measurement/

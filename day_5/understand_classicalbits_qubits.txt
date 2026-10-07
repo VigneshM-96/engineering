@@ -1,0 +1,14 @@
+Classical Bits : this is nothing but either 0 or 1 and with deterministic.
+Qubits : this is probablistic - by using the quantum property of superposition it can be 0, 1 simultaneously.
+
+key features - 
+
+1. possible state - for classical bits (0 or 1), for qubits (simultaneous 0 and also one)
+2. behaviour - for classical bits (deterministic), for qubits (probablistic)
+3. logic & math - for classical bits (logical gates AND OR, NOT), for qubits (Linear algebra)
+
+resource :
+
+1. google
+2. geeksforgeeks - https://www.geeksforgeeks.org/computer-organization-architecture/differnce-between-bits-and-quantum-bits/
+3. medium - https://jugaloza.medium.com/classical-bit-vs-quantum-qubit-4b46c4b589ab

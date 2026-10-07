@@ -1,0 +1,10 @@
+An bra-ket notation is a highly tech labled system.
+
+1) ket -  where the arrow pointing |0>
+2) superposition -
+    1) normal computer - either |0> or |1>
+    2) quantum computer - |w> = |0> + |1>
+3) bra - the mirror (shadow) <|
+4) bracket testing
+    1) <0|0> = 1 (perfect matching)
+    2) <0|1> = 0  (no match)

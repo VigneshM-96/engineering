@@ -1,0 +1,5 @@
+Quantum gates manipulate bits : X, H, Z
+
+X gate - flip bit like |0> into |1>
+H gate Hadamard - creates the superposition
+Z gate - phase flip like reversing qubit mathematical sign

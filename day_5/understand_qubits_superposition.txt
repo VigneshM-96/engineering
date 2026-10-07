@@ -1,0 +1,21 @@
+classical vs qubits :
+
+classical - its like fan on / off
+quibits - its like spinning coin on air 
+
+how works the superposition
+
+1) combinaiton of states
+2) probability amplitudes
+3) the collapse
+
+why superposition matters
+
+1) parallel processing
+2) supercharged speed
+
+resources :
+
+1) google
+2) Microsoft - https://quantum.microsoft.com/en-us/insights/education/concepts/superposition
+3) IBM - https://www.ibm.com/think/topics/quantum-computing

@@ -1,0 +1,12 @@
+quantum circut and circuit diagrams
+
+circuits are model of information which carries the information by wire through network of gates
+
+1) Boolean circuits
+2) Other types of circuits
+3) Quantum circuits
+
+
+resources : 
+
+1) IBM - https://quantum.cloud.ibm.com/learning/en/courses/basics-of-quantum-information/quantum-circuits/circuits
