@@ -1,0 +1,34 @@
+DAY 2 - 04/10/2026
+FOCUS: FLUTTER
+
+LEARNING TASKS
+[ ] Understand Flutter project structure
+[ ] Understand main() and runApp()
+[ ] MaterialApp and Scaffold
+[ ] StatelessWidget and build()
+[ ] StatefulWidget and setState()
+[ ] Container, Text, Icon, Image, SizedBox, Center
+
+PROJECT 1 - FLUTTER PROFILE SCREEN
+[ ] Create a basic profile screen
+[ ] Add profile image, name, role and basic information
+[ ] Use Container, Column, Row and Padding
+[ ] Make the layout clean and responsive
+
+PROJECT 2 - FLUTTER COUNTER APP
+[ ] Create a counter using StatefulWidget
+[ ] Add increment and decrement buttons
+[ ] Use setState() correctly
+[ ] Display the current counter value
+
+DAY 2 COMPLETION
+[ ] Complete 6 learning tasks
+[ ] Complete Project 1
+[ ] Complete Project 2
+
+NEXT ROTATION
+Day 3 - DSA
+Day 4 - Web App
+Day 5 - Quantum Computing
+Day 6 - AI Engineering
+Day 7 - Flutter

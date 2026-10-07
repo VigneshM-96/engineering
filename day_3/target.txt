@@ -1,0 +1,36 @@
+DAY 3 - 05/10/2026
+FOCUS: DSA
+
+LEARNING TASKS
+[ ] Understand time and space complexity
+[ ] Big O notation: O(1), O(n), O(log n), O(n^2)
+[ ] Arrays and indexing
+[ ] Array traversal and searching
+[ ] Linear Search
+[ ] Binary Search and its requirements
+
+PROJECT 1 - SEARCH ENGINE BASICS
+[ ] Create a Python program with a list of items
+[ ] Implement Linear Search
+[ ] Implement Binary Search
+[ ] Compare their number of operations
+[ ] Test both with different input sizes
+
+PROJECT 2 - ARRAY PRACTICE
+[ ] Find maximum and minimum values
+[ ] Find the second-largest element
+[ ] Reverse an array without using reverse()
+[ ] Remove duplicate values
+[ ] Calculate the frequency of each element
+
+DAY 3 COMPLETION
+[ ] Complete 6 learning tasks
+[ ] Complete Project 1
+[ ] Complete Project 2
+
+NEXT ROTATION
+Day 4 - Web App
+Day 5 - Quantum Computing
+Day 6 - AI Engineering
+Day 7 - Flutter
+Day 8 - DSA

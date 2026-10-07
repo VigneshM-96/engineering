@@ -1,0 +1,37 @@
+DAY 5 - 07/10/2026
+FOCUS: QUANTUM COMPUTING
+
+LEARNING TASKS
+[ ] Understand classical bits vs quantum bits
+[ ] Understand qubits and superposition
+[ ] Learn bra-ket notation: |0> and |1>
+[ ] Understand quantum measurement
+[ ] Learn basic quantum gates: X, H, Z
+[ ] Understand quantum circuits and circuit diagrams
+
+PROJECT 1 - FIRST QUANTUM CIRCUIT
+[ ] Set up a basic Python quantum environment
+[ ] Create a single-qubit circuit
+[ ] Apply an X gate
+[ ] Apply an H gate
+[ ] Measure the qubit
+[ ] Observe and interpret the measurement results
+
+PROJECT 2 - QUANTUM COIN FLIP
+[ ] Create a qubit initialized to |0>
+[ ] Apply a Hadamard gate
+[ ] Measure the qubit multiple times
+[ ] Record the results
+[ ] Explain why the results resemble a random coin flip
+
+DAY 5 COMPLETION
+[ ] Complete 6 learning tasks
+[ ] Complete Project 1
+[ ] Complete Project 2
+
+NEXT ROTATION
+Day 6 - AI Engineering
+Day 7 - Flutter
+Day 8 - DSA
+Day 9 - Web App
+Day 10 - Quantum Computing
