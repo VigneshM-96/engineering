@@ -1,0 +1,40 @@
+DAY 8 - 10/10/2026
+FOCUS: DSA
+
+LEARNING TASKS
+[ ] Understand why sorting is needed and where sorting is used
+[ ] Learn Bubble Sort — algorithm, swaps, tracing, and implementation
+[ ] Learn Selection Sort — minimum selection, swaps, and implementation
+[ ] Learn Insertion Sort — shifting, insertion, and implementation
+[ ] Compare Bubble, Selection, and Insertion Sort — time complexity and basic stability
+[ ] Solve 3–5 sorting problems and manually trace at least one algorithm step by step
+
+PROJECT 1 - SORTING COMPARISON TOOL
+[ ] Create a Python program that accepts an integer list
+[ ] Implement Bubble Sort
+[ ] Implement Selection Sort
+[ ] Implement Insertion Sort
+[ ] Count comparisons and swaps for each algorithm
+[ ] Display the sorted result and performance comparison
+[ ] Test with small, random, sorted, and reverse-sorted arrays
+
+PROJECT 2 - STUDENT LEADERBOARD
+[ ] Create student names and marks
+[ ] Sort students by marks from highest to lowest
+[ ] Sort students by name alphabetically
+[ ] Implement at least two sorting algorithms
+[ ] Display the top 3 students
+[ ] Test with duplicate marks
+
+DAY 8 COMPLETION
+[ ] Complete 6 learning tasks
+[ ] Complete Project 1
+[ ] Complete Project 2
+
+NEXT ROTATION
+Day 9 - Web App
+Day 10 - Quantum Computing
+Day 11 - AI Engineering
+Day 12 - Flutter
+Day 13 - DSA
+Day 14 - Web App

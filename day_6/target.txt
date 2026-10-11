@@ -1,0 +1,36 @@
+DAY 6 - 08/10/2026
+FOCUS: AI ENGINEERING
+
+LEARNING TASKS
+[ ] NumPy arrays - creation, shape, ndim, dtype
+[ ] NumPy indexing and slicing
+[ ] NumPy vectorized operations
+[ ] NumPy aggregation - sum, mean, min, max, std
+[ ] Pandas Series and DataFrame fundamentals
+[ ] Read, inspect and filter CSV data with Pandas
+
+PROJECT 1 - DATA ANALYZER
+[ ] Load a CSV dataset with Pandas
+[ ] Inspect columns, rows and data types
+[ ] Filter records using conditions
+[ ] Calculate basic statistics
+[ ] Generate a clean summary
+
+PROJECT 2 - NUMPY STATISTICS TOOL
+[ ] Accept a numerical dataset
+[ ] Calculate mean, median, min and max
+[ ] Calculate standard deviation
+[ ] Compare results with NumPy functions
+[ ] Display the final statistics clearly
+
+DAY 6 COMPLETION
+[ ] Complete 6 learning tasks
+[ ] Complete Project 1
+[ ] Complete Project 2
+
+NEXT ROTATION
+Day 7 - Flutter
+Day 8 - DSA
+Day 9 - Web App
+Day 10 - Quantum Computing
+Day 11 - AI Engineering

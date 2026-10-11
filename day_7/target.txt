@@ -1,0 +1,37 @@
+DAY 7 - 09/10/2026
+FOCUS: FLUTTER
+
+LEARNING TASKS
+[ ] Flutter widget tree and parent-child relationships
+[ ] Row, Column, Stack and Expanded
+[ ] Padding, SizedBox, Align and Center
+[ ] Container decoration and constraints
+[ ] ListView and ListView.builder
+[ ] Build reusable custom widgets
+
+PROJECT 1 - FLUTTER CONTACT APP
+[ ] Create a contact model
+[ ] Display contacts using ListView.builder
+[ ] Create a reusable ContactCard widget
+[ ] Add name, phone number and profile image
+[ ] Add a contact details screen
+[ ] Navigate from list to details
+
+PROJECT 2 - FLUTTER PROFILE DASHBOARD
+[ ] Create a responsive dashboard layout
+[ ] Add profile header
+[ ] Add statistics cards
+[ ] Add action buttons
+[ ] Practice Row, Column, Expanded and Stack
+
+DAY 7 COMPLETION
+[ ] Complete 6 learning tasks
+[ ] Complete Project 1
+[ ] Complete Project 2
+
+NEXT ROTATION
+Day 8 - DSA
+Day 9 - Web App
+Day 10 - Quantum Computing
+Day 11 - AI Engineering
+Day 12 - Flutter

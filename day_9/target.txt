@@ -1,0 +1,39 @@
+DAY 9 - 11/10/2026
+FOCUS: WEB APP
+
+LEARNING TASKS
+[ ] Understand JavaScript variables, data types, and operators
+[ ] Learn JavaScript functions, parameters, return values, and scope
+[ ] Learn arrays and objects in JavaScript
+[ ] Practice array methods — map(), filter(), find(), forEach()
+[ ] Understand DOM selection — getElementById(), querySelector(), querySelectorAll()
+[ ] Practice DOM manipulation and event handling with click/input events
+
+PROJECT 1 - TASK MANAGER
+[ ] Create a clean HTML structure for a task manager
+[ ] Add tasks using JavaScript
+[ ] Display tasks dynamically in the DOM
+[ ] Add complete and delete actions
+[ ] Use arrays/objects to store task data
+[ ] Add basic empty-task validation
+
+PROJECT 2 - EXPENSE TRACKER
+[ ] Create an expense input form
+[ ] Store expense name, category, and amount
+[ ] Display expenses dynamically
+[ ] Calculate total expenses using JavaScript
+[ ] Add delete functionality
+[ ] Show a simple summary of total spending
+
+DAY 9 COMPLETION
+[ ] Complete 6 learning tasks
+[ ] Complete Project 1
+[ ] Complete Project 2
+
+NEXT ROTATION
+Day 10 - Quantum Computing
+Day 11 - AI Engineering
+Day 12 - Flutter
+Day 13 - DSA
+Day 14 - Web App
+Day 15 - Quantum Computing
