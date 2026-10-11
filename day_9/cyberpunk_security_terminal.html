@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Security Terminal</title>
+    <style>
+        /* Adding basic styles so you can see the visual color changes clearly */
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+        #security-terminal {
+            border: 2px solid #30363d;
+            padding: 20px;
+            border-radius: 6px;
+            max-width: 400px;
+        }
+        .firewall-btn {
+            background-color: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            padding: 10px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .text-red {
+            color: #f85149;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="security-terminal">
+        <h1 id="system-status">STATUS: SECURE</h1>
+
+        <button class="firewall-btn">Reboot Node Alpha</button>
+        <button class="firewall-btn">Reboot Node Beta</button>
+
+        <p class="alert-text text-red">Intrusion Detected in sector 7!</p>
+    </div>
+
+    <!-- 1. JAVASCRIPT CONNECTED HERE -->
+    <script>
+        // 2. DOM SELECTION
+        const statusDisplay = document.getElementById("system-status");
+        const overrideButtons = document.querySelectorAll(".firewall-btn");
+
+        // 3. LOGIC & EVENT LISTENERS
+        overrideButtons.forEach((button, index) => {
+            // Listening for actual clicks in your browser
+            button.addEventListener("click", function() {
+                
+                // Change the main heading status and text color dynamically
+                statusDisplay.innerText = `ALERT: Node ${index + 1} Overridden!`;
+                statusDisplay.style.color = "#f85149"; // Changes heading to red
+                
+                // Update the styling of the specific button that was clicked
+                button.innerText = "NODE ONLINE";
+                button.style.backgroundColor = "#238636"; // Changes button to green
+                button.style.color = "#ffffff";
+            });
+        });
+    </script>
+    
+</body>
+</html>

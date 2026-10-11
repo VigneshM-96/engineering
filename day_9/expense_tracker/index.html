@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military Expense Tracker</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #38bdf8;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+        input, select {
+            padding: 12px;
+            background-color: #0f172a;
+            border: 1px solid #475569;
+            color: white;
+            border-radius: 6px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input:focus, select:focus {
+            outline: 2px solid #38bdf8;
+            border-color: transparent;
+        }
+        button {
+            padding: 12px;
+            background-color: #38bdf8;
+            color: #0f172a;
+            border: none;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        button:hover {
+            background-color: #7dd3fc;
+        }
+        .summary-box {
+            background-color: #0f172a;
+            border-left: 4px solid #38bdf8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .summary-box span {
+            font-weight: bold;
+            color: #34d399;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .expense-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #334155;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .expense-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .expense-name {
+            font-weight: bold;
+        }
+        .expense-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            background-color: #475569;
+            padding: 2px 6px;
+            border-radius: 4px;
+            width: fit-content;
+            color: #cbd5e1;
+        }
+        .expense-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .expense-amount {
+            font-weight: bold;
+            color: #f87171;
+        }
+        .btn-delete {
+            background-color: #f87171;
+            color: #0f172a;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-delete:hover {
+            background-color: #fca5a5;
+        }
+        .empty-log {
+            text-align: center;
+            color: #64748b;
+            font-style: italic;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🛠️ Logistics Expense Tracker</h2>
+        
+        <!-- [x] Show a simple summary of total spending -->
+        <div class="summary-box">
+            Total Operational Spending: <span id="total-spending">\$0.00</span>
+        </div>
+
+        <!-- [x] Create an expense input form -->
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Item Name (e.g., Drone Parts)" required>
+            
+            <div class="form-row">
+                <select id="expense-category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="Tech">Technology</option>
+                    <option value="Ammunition">Ammunition</option>
+                    <option value="Fuel">Fuel / Transport</option>
+                    <option value="Rations">Rations</option>
+                </select>
+                <input type="number" id="expense-amount" placeholder="Amount (\$)" step="0.01" min="0.01" required>
+            </div>
+            
+            <button type="submit">Log Expense</button>
+        </form>
+
+        <!-- [x] Display expenses dynamically -->
+        <ul id="expense-list">
+            <!-- Dynamic items injected here -->
+        </ul>
+        <div id="empty-state" class="empty-log">No operational expenses logged yet.</div>
+    </div>
+
+    <script>
+        // ====================================================================
+        // 1. DATA STATE & STORAGE
+        // ====================================================================
+        // [x] Store expense name, category, and amount inside an object array
+        let expenses = [
+            { id: 1, name: "Drone Propellers", category: "Tech", amount: 120.50 },
+            { id: 2, name: "Jet Fuel Refill", category: "Fuel", amount: 450.00 }
+        ];
+
+        // ====================================================================
+        // 2. DOM SELECTION
+        // ====================================================================
+        const expenseForm = document.getElementById("expense-form");
+        const expenseName = document.getElementById("expense-name");
+        const expenseCategory = document.getElementById("expense-category");
+        const expenseAmount = document.getElementById("expense-amount");
+        const expenseList = document.getElementById("expense-list");
+        const totalSpending = document.getElementById("total-spending");
+        const emptyState = document.getElementById("empty-state");
+
+        // ====================================================================
+        // 3. CALCULATION LOGIC
+        // ====================================================================
+        // [x] Calculate total expenses using JavaScript
+        function calculateTotal() {
+            let total = 0;
+            for (const item of expenses) {
+                total += item.amount;
+            }
+            totalSpending.innerText = `$${total.toFixed(2)}`;
+        }
+
+        // ====================================================================
+        // 4. RENDER LOGIC
+        // ====================================================================
+        // [x] Display expenses dynamically
+        function renderExpenses() {
+            expenseList.innerHTML = ""; // Clear current view
+            
+            if (expenses.length === 0) {
+                emptyState.style.display = "block";
+            } else {
+                emptyState.style.display = "none";
+            }
+
+            expenses.forEach(item => {
+                const li = document.createElement("li");
+                li.className = "expense-item";
+                
+                li.innerHTML = `
+                    <div class="expense-info">
+                        <span class="expense-name">${item.name}</span>
+                        <span class="expense-category">${item.category}</span>
+                    </div>
+                    <div class="expense-right">
+                        <span class="expense-amount">-$${item.amount.toFixed(2)}</span>
+                        <button class="btn-delete" onclick="deleteExpense(${item.id})">X</button>
+                    </div>
+                `;
+                expenseList.appendChild(li);
+            });
+
+            calculateTotal(); // Update math totals instantly
+        }
+
+        // ====================================================================
+        // 5. ACTION HANDLING
+        // ====================================================================
+        expenseForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Stop standard browser page reloads
+
+            // Package the data structure properties
+            const newExpense = {
+                id: Date.now(),
+                name: expenseName.value.trim(),
+                category: expenseCategory.value,
+                amount: parseFloat(expenseAmount.value) // Transform to accurate float number math
+            };
+
+            expenses.push(newExpense); // Commit to array state
+            expenseForm.reset();       // Clear the user input form
+            renderExpenses();          // Redraw interface
+        });
+
+        // [x] Add delete functionality
+        function deleteExpense(id) {
+            expenses = expenses.filter(item => item.id !== id);
+            renderExpenses();
+        }
+
+        // Initial launch render run
+        renderExpenses();
+    </script>
+</body>
+</html>

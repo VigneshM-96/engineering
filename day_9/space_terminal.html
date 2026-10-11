@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starship Command Console</title>
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        #console {
+            border: 2px solid #38bdf8;
+            padding: 30px;
+            border-radius: 8px;
+            background-color: #111827;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            width: 400px;
+        }
+        .input-group {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #baeb0c;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            background: #1f2937;
+            border: 1px solid #4b5563;
+            color: #fff;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #38bdf8;
+            color: #0b0f19;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #7dd3fc;
+        }
+        #shield-display {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #34d399;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="console">
+        <h2>COMMAND CONSOLE</h2>
+        
+        <!-- Live Input Group -->
+        <div class="input-group">
+            <label for="ship-name-input">ENTER PROTOCOL IDENTIFIER:</label>
+            <input type="text" id="ship-name-input" placeholder="Type ship name...">
+        </div>
+
+        <!-- Dynamic Output Text -->
+        <p>System Status: <span id="status-log">Awaiting identity...</span></p>
+        
+        <!-- Shield Display Indicator -->
+        <div id="shield-display">SHIELDS: 100%</div>
+
+        <!-- Click Action Button -->
+        <button id="raise-alarm-btn">ENGAGE WARP DRIVE</button>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. DOM SELECTION
+        // ==========================================
+        const nameInput = document.getElementById("ship-name-input");
+        const statusLog = document.getElementById("status-log");
+        const shieldDisplay = document.getElementById("shield-display");
+        const warpBtn = document.getElementById("raise-alarm-btn");
+
+        // ==========================================
+        // 2. INPUT EVENT HANDLER (Real-Time Typing)
+        // ==========================================
+        // The 'input' event triggers on every single keystroke inside the input field
+        nameInput.addEventListener("input", function(event) {
+            const currentTypedText = event.target.value;
+
+            if (currentTypedText.trim() === "") {
+                statusLog.innerText = "Awaiting identity...";
+                statusLog.style.color = "#e2e8f0";
+            } else {
+                // DOM Manipulation: Changing text content dynamically based on typing
+                statusLog.innerText = `Ship identified as [${currentTypedText.toUpperCase()}]`;
+                statusLog.style.color = "#38bdf8";
+            }
+        });
+
+        // ==========================================
+        // 3. CLICK EVENT HANDLER (Action Trigger)
+        // ==========================================
+        warpBtn.addEventListener("click", function() {
+            // DOM Manipulation: Changing style and text properties instantly on click
+            shieldDisplay.innerText = "SHIELDS OVERLOADED: 0%";
+            shieldDisplay.style.color = "#f87171"; // Shifts to hazardous red
+            
+            statusLog.innerText = "CRITICAL: Warp drive core engaged successfully.";
+            statusLog.style.color = "#f43f5e";
+
+            warpBtn.innerText = "SYSTEM LOCKOUT";
+            warpBtn.style.backgroundColor = "#4b5563";
+            warpBtn.disabled = true; // Prevents further clicking
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager System</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            margin: 0;
+        }
+        .container {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 450px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #38bdf8;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 12px;
+            background-color: #0f172a;
+            border: 1px solid #475569;
+            color: white;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        input:focus {
+            outline: 2px solid #38bdf8;
+            border-color: transparent;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #38bdf8;
+            color: #0f172a;
+            border: none;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #7dd3fc;
+        }
+        .error-message {
+            color: #f87171;
+            font-size: 0.85rem;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            display: none;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #334155;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+        .task-text {
+            flex: 1;
+            margin-right: 15px;
+            word-break: break-all;
+        }
+        .completed .task-text {
+            text-decoration: line-through;
+            color: #94a3b8;
+        }
+        .actions {
+            display: flex;
+            gap: 8px;
+        }
+        .btn-complete {
+            background-color: #34d399;
+            color: #0f172a;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+        .btn-complete:hover { background-color: #6ee7b7; }
+        .btn-delete {
+            background-color: #f87171;
+            color: #0f172a;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+        .btn-delete:hover { background-color: #fca5a5; }
+    </style>
+</head>
+<body>
+
+    <!-- [x] Create a clean HTML structure for a task manager -->
+    <div class="container">
+        <h2>📋 Task Tracker</h2>
+        
+        <div class="input-group">
+            <input type="text" id="task-input" placeholder="What needs to be done?">
+            <button id="add-task-btn">Add Task</button>
+        </div>
+        <!-- [x] Add basic empty-task validation alert layout -->
+        <div id="error-box" class="error-message">Task cannot be empty!</div>
+
+        <ul id="task-list">
+            <!-- Dynamic tasks inject here -->
+        </ul>
+    </div>
+
+    <script>
+        // ====================================================================
+        // 1. DATA STATE & STORAGE
+        // ====================================================================
+        // [x] Use arrays/objects to store task data
+        let tasks = [
+            { id: 1, text: "Learn DOM manipulation", completed: false },
+            { id: 2, text: "Build a strong portfolio project", completed: true }
+        ];
+
+        // ====================================================================
+        // 2. DOM SELECTION
+        // ====================================================================
+        const taskInput = document.getElementById("task-input");
+        const addTaskBtn = document.getElementById("add-task-btn");
+        const taskList = document.getElementById("task-list");
+        const errorBox = document.getElementById("error-box");
+
+        // ====================================================================
+        // 3. RENDER LOGIC (Displaying tasks dynamically in the DOM)
+        // ====================================================================
+        // [x] Display tasks dynamically in the DOM
+        function renderTasks() {
+            taskList.innerHTML = ""; // Clear existing UI list
+
+            tasks.forEach(task => {
+                const li = document.createElement("li");
+                li.className = `task-item ${task.completed ? 'completed' : ''}`;
+                
+                li.innerHTML = `
+                    <span class="task-text">${task.text}</span>
+                    <div class="actions">
+                        <button class="btn-complete" onclick="toggleComplete(${task.id})">
+                            ${task.completed ? 'Undo' : 'Done'}
+                        </button>
+                        <button class="btn-delete" onclick="deleteTask(${task.id})">Delete</button>
+                    </div>
+                `;
+                taskList.appendChild(li);
+            });
+        }
+
+        // ====================================================================
+        // 4. BUSINESS LOGIC (Actions & Validations)
+        // ====================================================================
+        
+        // [x] Add tasks using JavaScript
+        function handleAddTask() {
+            const textValue = taskInput.value.trim();
+
+            // [x] Add basic empty-task validation
+            if (textValue === "") {
+                errorBox.style.display = "block";
+                return;
+            }
+
+            errorBox.style.display = "none"; // Hide error if input valid
+
+            // Create a brand new task object configuration
+            const newTask = {
+                id: Date.now(), // Generates a unique timestamp ID
+                text: textValue,
+                completed: false
+            };
+
+            tasks.push(newTask); // Update array data state
+            taskInput.value = ""; // Clear input interface
+            renderTasks();       // Force DOM sync update
+        }
+
+        // [x] Add complete action
+        function toggleComplete(id) {
+            const task = tasks.find(t => t.id === id);
+            if (task) {
+                task.completed = !task.completed; // Invert status flag
+                renderTasks();
+            }
+        }
+
+        // [x] Add delete action
+        function deleteTask(id) {
+            // Filter array to completely drop the deleted element entry
+            tasks = tasks.filter(t => t.id !== id);
+            renderTasks();
+        }
+
+        // ====================================================================
+        // 5. EVENT CONNECTIONS
+        // ====================================================================
+        addTaskBtn.addEventListener("click", handleAddTask);
+        
+        // Allow adding tasks smoothly by hitting the 'Enter' keyboard key
+        taskInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") handleAddTask();
+        });
+
+        // Initialize display setup on first run
+        renderTasks();
+    </script>
+</body>
+</html>
